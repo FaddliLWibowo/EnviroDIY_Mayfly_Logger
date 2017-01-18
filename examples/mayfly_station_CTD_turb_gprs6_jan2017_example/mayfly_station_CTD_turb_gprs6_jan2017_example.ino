@@ -106,8 +106,8 @@ void setup()
   pinMode(23, OUTPUT);    // Bee socket DTR pin
   digitalWrite(23, LOW);   // on GPRSbee v6, setting this high turns on the GPRSbee.  leave it high to keep GPRSbee on.  
 
-  gprsbee.init(Serial1, XBEECTS_PIN, GPRSBEE_PWRPIN);
-  //Comment out the next line when used with GPRSbee Rev.4
+  gprsbee.initAutonomoSIM800(Serial1, -1, XBEECTS_PIN, GPRSBEE_PWRPIN); // only for use with the GPRSbee v6. For the GPRSbee Rev.4 use "gprsbee.init(Serial1, XBEECTS_PIN, GPRSBEE_PWRPIN);"
+  
   gprsbee.setPowerSwitchedOnOff(true);
   
   ads.begin();       //begin adafruit ADS1015
