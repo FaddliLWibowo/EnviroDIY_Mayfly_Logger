@@ -13,17 +13,21 @@ int sensorPin = 1;   //the analog pin the TMP36's Vout (sense) pin is connected 
                         //500 mV offset to allow for negative temperatures
 
 /*
- * setup() - this function runs once when you turn your Arduino on
- * We initialize the serial connection with the computer
+ * setup() - this function runs once when you turn your Mayfly on
  */
-void setup()
+void setup() 
 {
-  Serial.begin(57600);  //Start the serial connection with the computer
-                       //to view the result open the serial monitor
-  Serial1.begin(9600);    //this is the Xbee transmit port
+	// Start the primary serial connection
+  Serial.begin(57600);  
+  // Start the serial connection with the *bee                       
+  Serial1.begin(9600);
 }
 
-void loop()                     // run over and over again
+
+/*
+ * void() - this function runs over and over as long as your Mayfly is on.
+ */
+void loop() 
 {
  //getting the voltage reading from the temperature sensor
  int reading = analogRead(sensorPin);
